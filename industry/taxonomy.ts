@@ -10,6 +10,7 @@
 export const CATEGORIES = [
   { key: "ai-models", label: "模型", section: "模型发布/更新", guide: "新模型、模型版本、权重开放、模型能力与价格变化的发布与评测结果" },
   { key: "ai-products", label: "产品", section: "产品发布/更新", guide: "AI 产品、功能、应用、工具、API 与平台的发布和更新" },
+  { key: "nas-hardware", label: "NAS/存储", section: "NAS 与存储", guide: "NAS 设备、硬盘与固态、存储软件、文件系统、备份与灾备、RAID、网络存储相关的发布、评测与故障处理" },
   { key: "industry", label: "行业", section: "行业动态", guide: "公司经营、融资并购、人事、合作、诉讼、监管与政策、市场与基础设施" },
   { key: "paper", label: "论文", section: "论文研究", guide: "研究论文、技术报告、基准与数据集" },
   { key: "tip", label: "教程", section: "技巧与观点", guide: "教程、实践经验、使用技巧、提示词与工具用法、深度技术讲解" },
@@ -27,16 +28,20 @@ export const ITEM_TYPES = ["model_release", "product_launch", "tool_or_prompt", 
 /** 每篇资料的第一个标签必须是这些“分类标签”之一。 */
 export const CATEGORY_TAGS = [
   "产品更新", "模型发布", "论文/研究", "开源/仓库", "教程/实践", "现象/趋势", "大佬观点", "评测/基准", "安全/对齐", "行业动态", "政策/监管",
-  "非AI/通用工具", "其他",
+  "硬件/设备", "存储/数据", "非AI/通用工具", "其他",
 ] as const;
 
 /** 可选的主题标签。 */
 export const TOPIC_TAGS = [
   "Agent", "编码", "推理", "多模态", "语音", "视频", "图像生成", "RAG", "端侧", "数据/训练", "搜索", "部署/工程", "开源生态", "具身智能", "MCP/工具调用",
+  "NAS", "硬盘/SSD", "文件系统", "备份/灾备", "网络/带宽", "家庭服务器", "虚拟化/容器",
 ] as const;
 
 /** 可选的实体标签（公司、机构、平台）。 */
-export const ENTITY_TAGS = ["OpenAI", "Anthropic", "DeepSeek", "DeepMind", "Google", "Meta", "Microsoft", "xAI", "Hugging Face", "GitHub", "arXiv"] as const;
+export const ENTITY_TAGS = [
+  "OpenAI", "Anthropic", "DeepSeek", "DeepMind", "Google", "Meta", "Microsoft", "xAI", "Hugging Face", "GitHub", "arXiv",
+  "Synology", "QNAP", "TrueNAS", "Western Digital", "Seagate", "Samsung", "OpenZFS", "Unraid", "Nextcloud",
+] as const;
 
 /** 模型常写的近义词，统一成词表里的写法。 */
 export const TAG_SYNONYMS: Readonly<Record<string, string>> = {
@@ -49,6 +54,9 @@ export const TAG_SYNONYMS: Readonly<Record<string, string>> = {
   产品: "产品更新", 更新: "产品更新", 发布: "模型发布", 模型: "模型发布", 趋势: "现象/趋势", 现象: "现象/趋势", 观点: "大佬观点",
   视频生成: "视频", 非ai: "非AI/通用工具", "non-ai": "非AI/通用工具", 通用工具: "非AI/通用工具", 工程工具: "非AI/通用工具",
   安全扫描: "非AI/通用工具", devops: "非AI/通用工具", 行业: "行业动态", 动态: "行业动态",
+  硬件: "硬件/设备", 设备: "硬件/设备", 产品发布: "产品更新", 机型: "硬件/设备",
+  存储: "存储/数据", 硬盘: "存储/数据", 数据: "存储/数据", 存储产品: "存储/数据",
+  备份: "存储/数据", 灾备: "存储/数据", 容量: "存储/数据", nas: "硬件/设备", 群晖: "硬件/设备", 威联通: "硬件/设备",
 };
 
 /** 模型漏了分类标签时，按内容类型补一个。 */
@@ -76,6 +84,14 @@ export const ENTITIES: Record<string, { name: string; displayTag: string | null;
   "hugging-face": { name: "Hugging Face", displayTag: "Hugging Face", aliases: ["Hugging Face"] },
   cursor: { name: "Cursor", displayTag: null, aliases: ["Cursor", "Anysphere"] },
   openrouter: { name: "OpenRouter", displayTag: null, aliases: ["OpenRouter"] },
+  synology: { name: "群晖 Synology", displayTag: "Synology", aliases: ["Synology", "群晖", "DSM", "DiskStation"] },
+  qnap: { name: "威联通 QNAP", displayTag: "QNAP", aliases: ["QNAP", "威联通", "QTS", "Turbo"] },
+  truenas: { name: "TrueNAS", displayTag: "TrueNAS", aliases: ["TrueNAS", "iXsystems", "FreeNAS"] },
+  unraid: { name: "Unraid", displayTag: "Unraid", aliases: ["Unraid", "Lime Technology"] },
+  western-digital: { name: "西部数据 WD", displayTag: "Western Digital", aliases: ["Western Digital", "WD", "西部数据", "WD Red", "WD Black", "SanDisk"] },
+  seagate: { name: "希捷 Seagate", displayTag: "Seagate", aliases: ["Seagate", "希捷", "IronWolf", "SkyHawk", "Exos"] },
+  openzfs: { name: "OpenZFS", displayTag: "OpenZFS", aliases: ["OpenZFS", "ZFS", "zfs"] },
+  nextcloud: { name: "Nextcloud", displayTag: "Nextcloud", aliases: ["Nextcloud"] },
 };
 
 /**

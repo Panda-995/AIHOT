@@ -561,6 +561,77 @@
       ]
     },
     {
+      "slug": "nas",
+      "name": "NAS 与网络存储",
+      "group": "field",
+      "tags": [
+        "NAS"
+      ],
+      "definition": "网络附加存储的一切：群晖与威联通的系统更新、机型与选购、远程访问、媒体库与自建服务。",
+      "related": [
+        "drives",
+        "filesystems",
+        "backup",
+        "homelab"
+      ]
+    },
+    {
+      "slug": "drives",
+      "name": "硬盘与 SSD",
+      "group": "field",
+      "tags": [
+        "硬盘/SSD"
+      ],
+      "definition": "存储介质动态：机械盘与固态新品、容量与价格走势、SMR 与 CMR 规格、SMART 健康与寿命。",
+      "related": [
+        "nas",
+        "filesystems",
+        "backup"
+      ]
+    },
+    {
+      "slug": "filesystems",
+      "name": "文件系统与 RAID",
+      "group": "field",
+      "tags": [
+        "文件系统"
+      ],
+      "definition": "ZFS、Btrfs、ext4 与 md-RAID 的进展：特性变化、数据校验、重组与恢复实践。",
+      "related": [
+        "nas",
+        "drives",
+        "backup"
+      ]
+    },
+    {
+      "slug": "backup",
+      "name": "备份与灾备",
+      "group": "field",
+      "tags": [
+        "备份/灾备"
+      ],
+      "definition": "数据不丢的前提：备份策略与工具、快照与版本管理、勒索软件与数据损坏事故复盘。",
+      "related": [
+        "nas",
+        "filesystems",
+        "homelab"
+      ]
+    },
+    {
+      "slug": "homelab",
+      "name": "家庭服务器",
+      "group": "field",
+      "tags": [
+        "家庭服务器"
+      ],
+      "definition": "家里那台服务器：软路由、虚拟化、容器编排与跑在本地服务上的折腾与心得。",
+      "related": [
+        "nas",
+        "backup",
+        "on-device"
+      ]
+    },
+    {
       "slug": "policy",
       "name": "政策监管",
       "group": "genre",
