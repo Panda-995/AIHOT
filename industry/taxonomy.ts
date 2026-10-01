@@ -88,7 +88,7 @@ export const ENTITIES: Record<string, { name: string; displayTag: string | null;
   qnap: { name: "威联通 QNAP", displayTag: "QNAP", aliases: ["QNAP", "威联通", "QTS", "Turbo"] },
   truenas: { name: "TrueNAS", displayTag: "TrueNAS", aliases: ["TrueNAS", "iXsystems", "FreeNAS"] },
   unraid: { name: "Unraid", displayTag: "Unraid", aliases: ["Unraid", "Lime Technology"] },
-  western-digital: { name: "西部数据 WD", displayTag: "Western Digital", aliases: ["Western Digital", "WD", "西部数据", "WD Red", "WD Black", "SanDisk"] },
+  "western-digital": { name: "西部数据 WD", displayTag: "Western Digital", aliases: ["Western Digital", "WD", "西部数据", "WD Red", "WD Black", "SanDisk"] },
   seagate: { name: "希捷 Seagate", displayTag: "Seagate", aliases: ["Seagate", "希捷", "IronWolf", "SkyHawk", "Exos"] },
   openzfs: { name: "OpenZFS", displayTag: "OpenZFS", aliases: ["OpenZFS", "ZFS", "zfs"] },
   nextcloud: { name: "Nextcloud", displayTag: "Nextcloud", aliases: ["Nextcloud"] },
